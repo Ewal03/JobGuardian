@@ -45,14 +45,14 @@
         android:layout_height="wrap_content"
         android:text="Detect a job vacancy!"
         android:textColor="@color/white"
-        android:textSize="20dp"
+        android:textSize="19dp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.041"
+        app:layout_constraintHorizontal_bias="0.073"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/userHello"
-        app:layout_constraintVertical_bias="0.071" />
+        app:layout_constraintVertical_bias="0.062" />
 
     <TextView
         android:id="@+id/textView7"

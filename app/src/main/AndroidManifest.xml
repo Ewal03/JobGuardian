@@ -17,13 +17,13 @@
             android:name=".ui.authenticaion.signUp.SignUpActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.authenticaion.WelcomeActivity"
+            android:name=".ui.main.MainActivity"
             android:exported="false" />
         <activity
             android:name=".ui.authenticaion.signIn.SignInActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.main.MainActivity"
+            android:name=".ui.authenticaion.WelcomeActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
