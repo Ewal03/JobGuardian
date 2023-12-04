@@ -12,14 +12,14 @@
         tools:layout="@layout/fragment_home" />
 
     <fragment
-        android:id="@+id/navigation_dashboard"
+        android:id="@+id/navigation_detection"
         android:name="com.example.jobguardian.ui.main.ui.detection.DetectionFragment"
-        android:label="@string/title_dashboard"
+        android:label="Detection"
         tools:layout="@layout/fragment_detection" />
 
     <fragment
-        android:id="@+id/navigation_notifications"
+        android:id="@+id/navigation_profile"
         android:name="com.example.jobguardian.ui.main.ui.notifications.ProfileFragment"
-        android:label="@string/title_notifications"
+        android:label="Profile"
         tools:layout="@layout/fragment_profile" />
 </navigation>
