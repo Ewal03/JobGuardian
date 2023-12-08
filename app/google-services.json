@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "494588721355",
+    "project_id": "jobguardian-app-project",
+    "storage_bucket": "jobguardian-app-project.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:494588721355:android:fd9cec2d8bf9f42796034e",
+        "android_client_info": {
+          "package_name": "com.example.jobguardian"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "494588721355-j123rm4k5fejocu8v5789j0umv9aug5t.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyANAuth-6PhumyVwZyfShLq_UAe3S2D_ac"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "494588721355-j123rm4k5fejocu8v5789j0umv9aug5t.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
