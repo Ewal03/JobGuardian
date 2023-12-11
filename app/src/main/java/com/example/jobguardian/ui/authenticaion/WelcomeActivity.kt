@@ -18,6 +18,8 @@ class WelcomeActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         setupAction()
+
+        supportActionBar?.hide()
     }
 
     private fun setupAction() {
