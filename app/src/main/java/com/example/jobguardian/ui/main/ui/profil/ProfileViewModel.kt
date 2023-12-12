@@ -1,4 +1,4 @@
-package com.example.jobguardian.ui.main.ui.profil
+package com.example.jobguardian.ui.main.ui.notifications
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
