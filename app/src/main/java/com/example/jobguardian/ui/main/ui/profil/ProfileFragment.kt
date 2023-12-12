@@ -1,4 +1,4 @@
-package com.example.jobguardian.ui.main.ui.notifications
+package com.example.jobguardian.ui.main.ui.profil
 
 import android.content.Intent
 import android.os.Bundle
