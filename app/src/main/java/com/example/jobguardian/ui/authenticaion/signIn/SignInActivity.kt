@@ -84,7 +84,6 @@ class SignInActivity : AppCompatActivity() {
     private fun updateUI(currentUser: FirebaseUser?) {
         if (currentUser != null){
             Log.d(TAG, "User is signed in: ${currentUser.displayName}")
-
             startActivity(Intent(this@SignInActivity, MainActivity::class.java))
             finish()
 

@@ -8,13 +8,53 @@
     tools:context=".ui.main.ui.notifications.ProfileFragment">
 
     <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/profileImage"
         android:layout_width="250dp"
         android:layout_height="302dp"
         android:layout_marginTop="25dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:src="@tools:sample/avatars"/>
+        tools:src="@tools:sample/avatars" />
+
+    <EditText
+        android:id="@+id/editTextName"
+        android:layout_width="400dp"
+        android:layout_height="38dp"
+        android:layout_marginTop="16dp"
+        android:backgroundTint="#FFFF"
+        android:hint="Name"
+        android:textColorHint="@android:color/white"
+        android:textColor="@android:color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/profileImage" />
+
+    <EditText
+        android:id="@+id/editTextBirthday"
+        android:layout_width="400dp"
+        android:layout_height="38dp"
+        android:layout_marginTop="16dp"
+        android:textColorHint="@android:color/white"
+        android:textColor="@android:color/white"
+        android:backgroundTint="#FFFF"
+        android:hint="Birthday"
+        app:layout_constraintStart_toStartOf="@+id/editTextName"
+        app:layout_constraintTop_toBottomOf="@+id/editTextName" />
+
+    <EditText
+        android:id="@+id/editTextContactPerson"
+        android:layout_width="396dp"
+        android:layout_height="47dp"
+        android:layout_marginTop="8dp"
+        android:textColor="@android:color/white"
+        android:backgroundTint="#FFFF"
+        android:hint="Contact Person"
+        android:textColorHint="@android:color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/editTextBirthday"
+        app:layout_constraintTop_toBottomOf="@id/editTextBirthday" />
 
     <Button
         android:id="@+id/btn_logout"
