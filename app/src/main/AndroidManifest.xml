@@ -15,7 +15,7 @@
         android:theme="@style/Theme.JobGuardian"
         tools:targetApi="31">
         <activity
-            android:name=".ui.splash.SplashActivity"
+            android:name=".ui.authenticaion.WelcomeActivity"
             android:exported="false" />
         <activity
             android:name=".ui.main.ui.detail.DetailActivity"
@@ -30,7 +30,7 @@
             android:name=".ui.authenticaion.signIn.SignInActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.authenticaion.WelcomeActivity"
+            android:name=".ui.splash.SplashActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

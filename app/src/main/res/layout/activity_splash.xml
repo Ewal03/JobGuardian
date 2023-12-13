@@ -7,14 +7,11 @@
     tools:context=".ui.splash.SplashActivity"
     android:background="@color/Bblue">
 
-    <TextView
-        android:id="@+id/tv_splash"
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/iv_splash"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="JOB GUARDIAN"
-        android:textSize="55dp"
-        android:layout_gravity="center"
-        android:textColor="@color/white"
-        android:textStyle="bold" />
+        android:src="@drawable/bewa"
+        android:scaleType="centerCrop"/>
 
 </LinearLayout>
