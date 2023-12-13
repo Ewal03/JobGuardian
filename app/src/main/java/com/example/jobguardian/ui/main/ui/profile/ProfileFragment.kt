@@ -53,7 +53,6 @@ class ProfileFragment : Fragment() {
             startSignInActivity()
         }
 
-
         binding.btnLogout.setOnClickListener {
             signOut()
         }
