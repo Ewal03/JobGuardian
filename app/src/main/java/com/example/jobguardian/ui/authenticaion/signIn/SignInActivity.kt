@@ -46,6 +46,8 @@ class SignInActivity : AppCompatActivity() {
             signIn()
         }
 
+        supportActionBar?.hide()
+
     }
 
     private fun signIn() {
