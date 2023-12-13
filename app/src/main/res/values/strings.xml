@@ -6,4 +6,78 @@
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
+    <string name="default_web_client_id">s\n</string>
+
+    <string-array name="company_name">
+        <item>Telkom Indonesia</item>
+        <item>Google</item>
+        <item>Tokopedia</item>
+        <item>Traveloka</item>
+        <item>Indomaret</item>
+        <item>PWC</item>
+        <item>Tesla Anjay</item>
+        <item>Apple</item>
+        <item>Microsoft</item>
+        <item>Real Madrid</item>
+    </string-array>
+    <string-array name="salary">
+        <item>Rp.200243000</item>
+        <item>Rp.600243000</item>
+        <item>Rp.197850000</item>
+        <item>Rp.209800000</item>
+        <item>Rp.123400000</item>
+        <item>Rp.200000000</item>
+        <item>Rp.423000000</item>
+        <item>Rp.234000000</item>
+        <item>Rp.100340000</item>
+        <item>Rp.999999999</item>
+    </string-array>
+    <string-array name="position">
+        <item>HRD</item>
+        <item>Software Enginner</item>
+        <item>Sales</item>
+        <item>Travel Agent</item>
+        <item>HRD</item>
+        <item>Android Developer</item>
+        <item>CEO</item>
+        <item>Software Developer</item>
+        <item>Data Analyst</item>
+        <item>Striker Haus Gol</item>
+    </string-array>
+    <string-array name="location">
+        <item>Bandung, Indonesia</item>
+        <item>California, USA</item>
+        <item>Jakarta, Indonesia</item>
+        <item>Jakarta , Indonesia</item>
+        <item>Jakarta, Indonesia</item>
+        <item>Jakarta, Indonesia</item>
+        <item>United State of America</item>
+        <item>Bogor, Indonesia</item>
+        <item>Los Anges, USA</item>
+        <item>Madrid, Spain</item>
+    </string-array>
+    <string-array name="description">
+        <item>dummy descripton heula bray</item>
+        <item>dummy descripton heula bray</item>
+        <item>dummy descripton heula bray</item>
+        <item>dummy descripton heula bray</item>
+        <item>dummy descripton heula bray</item>
+        <item>dummy descripton heula bray</item>
+        <item>dummy descripton heula bray</item>
+        <item>dummy descripton heula bray</item>
+        <item>dummy descripton heula bray</item>
+        <item>dummy descripton heula bray</item>
+    </string-array>
+    <integer-array name="logo">
+        <item>@drawable/bewa</item>
+        <item>@drawable/bewa</item>
+        <item>@drawable/bewa</item>
+        <item>@drawable/bewa</item>
+        <item>@drawable/bewa</item>
+        <item>@drawable/bewa</item>
+        <item>@drawable/bewa</item>
+        <item>@drawable/bewa</item>
+        <item>@drawable/bewa</item>
+        <item>@drawable/bewa</item>
+    </integer-array>
 </resources>

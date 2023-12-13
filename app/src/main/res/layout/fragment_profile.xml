@@ -5,28 +5,75 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/Bblue"
-    tools:context=".ui.main.ui.notifications.ProfileFragment">
+    tools:context=".ui.main.ui.profile.ProfileFragment">
 
     <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/profileImage"
         android:layout_width="250dp"
         android:layout_height="302dp"
         android:layout_marginTop="25dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:src="@tools:sample/avatars"/>
+        tools:src="@drawable/mugi" />
+
+    <EditText
+        android:id="@+id/editTextName"
+        android:layout_width="match_parent"
+        android:layout_height="38dp"
+        android:layout_marginTop="16dp"
+        android:backgroundTint="#FFFF"
+        android:hint="Name"
+        android:textColorHint="@android:color/white"
+        android:textColor="@android:color/white"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/profileImage" />
+
+    <EditText
+        android:id="@+id/editTextBirthday"
+        android:layout_width="match_parent"
+        android:layout_height="38dp"
+        android:layout_marginTop="16dp"
+        android:textColorHint="@android:color/white"
+        android:textColor="@android:color/white"
+        android:backgroundTint="#FFFF"
+        android:hint="Birthday"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        app:layout_constraintStart_toStartOf="@+id/editTextName"
+        app:layout_constraintTop_toBottomOf="@+id/editTextName" />
+
+    <EditText
+        android:id="@+id/editTextContactPerson"
+        android:layout_width="match_parent"
+        android:layout_height="47dp"
+        android:layout_marginTop="8dp"
+        android:textColor="@android:color/white"
+        android:backgroundTint="#FFFF"
+        android:hint="Contact Person"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:textColorHint="@android:color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/editTextBirthday"
+        app:layout_constraintTop_toBottomOf="@id/editTextBirthday" />
 
     <Button
         android:id="@+id/btn_logout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:backgroundTint="@color/black"
-        android:text="Log Out"
+        android:backgroundTint="@color/Dyellow"
+        android:text="Sign Out"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.935"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.868" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

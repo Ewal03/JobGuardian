@@ -1,16 +1,19 @@
-package com.example.jobguardian.ui.main.ui.notifications
+package com.example.jobguardian.ui.main.ui.profile
 
 import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProvider
 import com.example.jobguardian.databinding.FragmentProfileBinding
 import com.example.jobguardian.ui.authenticaion.signIn.SignInActivity
+import com.google.firebase.Firebase
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.auth.ktx.auth
-import com.google.firebase.ktx.Firebase
+import com.google.firebase.auth.auth
 
 class ProfileFragment : Fragment() {
 
@@ -18,13 +21,29 @@ class ProfileFragment : Fragment() {
     private val binding get() = _binding!!
     private lateinit var auth: FirebaseAuth
 
+    private lateinit var profileViewModel: ProfileViewModel
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
+        profileViewModel = ViewModelProvider(this).get(ProfileViewModel::class.java)
+
         _binding = FragmentProfileBinding.inflate(inflater, container, false)
         val root: View = binding.root
+        profileViewModel.getUserProfile("6YECw2JbtcEWJ21baS2Z")
+        profileViewModel.userProfile.observe(viewLifecycleOwner, Observer { userProfile ->
+            profileViewModel.userProfile.observe(viewLifecycleOwner, Observer { userProfile ->
+                binding.editTextName.setText(userProfile?.userProfile?.fullName ?: "")
+                binding.editTextBirthday.setText(userProfile?.userProfile?.birthDate ?: "")
+                binding.editTextContactPerson.setText(userProfile?.userProfile?.contact ?: "")
+            })
+
+        })
+        profileViewModel.errorMessage.observe(viewLifecycleOwner, Observer { errorMessage ->
+            Toast.makeText(requireContext(), errorMessage, Toast.LENGTH_SHORT).show()
+        })
 
         auth = Firebase.auth
 
@@ -34,12 +53,11 @@ class ProfileFragment : Fragment() {
             startSignInActivity()
         }
 
+        binding.btnLogout.setOnClickListener {
+            signOut()
+        }
 
-            binding.btnLogout.setOnClickListener {
-                signOut()
-            }
         return root
-
     }
 
     private fun startSignInActivity() {
@@ -54,6 +72,7 @@ class ProfileFragment : Fragment() {
         startActivity(intent)
         requireActivity().finish()
     }
+
 
     override fun onDestroyView() {
         super.onDestroyView()

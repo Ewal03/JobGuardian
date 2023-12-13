@@ -4,31 +4,79 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/Bblue"
     tools:context=".ui.authenticaion.WelcomeActivity">
+
+    <TextView
+        android:id="@+id/textView16"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Welcome to Jobguardian"
+        android:textColor="@color/Dyellow"
+        android:textSize="35dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.722"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.083" />
+
+    <TextView
+        android:id="@+id/textView14"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Detect a Job Now"
+        android:textColor="@color/Dyellow"
+        android:textSize="30dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.075"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView16"
+        app:layout_constraintVertical_bias="0.02" />
+
+    <TextView
+        android:id="@+id/textView15"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sign in or Sign Up :"
+        android:textColor="@color/Dyellow"
+        android:textSize="26dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.481" />
 
     <Button
         android:id="@+id/signIn"
         android:layout_width="150dp"
         android:layout_height="100dp"
-        android:layout_marginStart="24dp"
-        android:backgroundTint="@color/Bblue"
+        android:layout_marginStart="28dp"
+        android:backgroundTint="@color/Dyellow"
         android:text="Sign In"
         android:textSize="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.659"
         tools:ignore="MissingConstraints" />
 
     <Button
         android:id="@+id/signUp"
         android:layout_width="150dp"
         android:layout_height="100dp"
-        android:backgroundTint="@color/Bblue"
+        android:backgroundTint="@color/Dyellow"
         android:text="SignUp"
         android:textSize="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.807"
         app:layout_constraintStart_toEndOf="@+id/signIn"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.659"
         tools:ignore="MissingConstraints" />
 </androidx.constraintlayout.widget.ConstraintLayout>
