@@ -1,5 +1,6 @@
 package com.example.jobguardian.ui.main.ui.profile
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -9,11 +10,17 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.example.jobguardian.databinding.FragmentProfileBinding
+import com.example.jobguardian.ui.authenticaion.signIn.SignInActivity
+import com.google.firebase.Firebase
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.auth
 
 class ProfileFragment : Fragment() {
 
     private var _binding: FragmentProfileBinding? = null
     private val binding get() = _binding!!
+    private lateinit var auth: FirebaseAuth
+
     private lateinit var profileViewModel: ProfileViewModel
 
     override fun onCreateView(
@@ -37,8 +44,36 @@ class ProfileFragment : Fragment() {
         profileViewModel.errorMessage.observe(viewLifecycleOwner, Observer { errorMessage ->
             Toast.makeText(requireContext(), errorMessage, Toast.LENGTH_SHORT).show()
         })
+
+        auth = Firebase.auth
+
+        val firebaseUser = auth.currentUser
+        if (firebaseUser == null) {
+            // Not signed in, launch the Login activity
+            startSignInActivity()
+        }
+
+
+        binding.btnLogout.setOnClickListener {
+            signOut()
+        }
+
         return root
     }
+
+    private fun startSignInActivity() {
+        val intent = Intent(requireContext(), SignInActivity::class.java)
+        startActivity(intent)
+        requireActivity().finish()
+    }
+
+    private fun signOut() {
+        auth.signOut()
+        val intent = Intent(requireContext(), SignInActivity::class.java)
+        startActivity(intent)
+        requireActivity().finish()
+    }
+
 
     override fun onDestroyView() {
         super.onDestroyView()
