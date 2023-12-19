@@ -1,47 +1,72 @@
 package com.example.jobguardian.ui.main.adapter
 
-import android.content.Intent
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
-import android.widget.TextView
+import androidx.fragment.app.Fragment
+import androidx.paging.PagingDataAdapter
+import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.example.jobguardian.R
-import com.example.jobguardian.ui.main.ui.detail.DetailActivity
+import com.example.jobguardian.data.response.DataItem
+import com.example.jobguardian.databinding.ListCompanyBinding
 
-class ListCompanyAdapter(private val listCompany: ArrayList<Company>) :
-    RecyclerView.Adapter<ListCompanyAdapter.ListViewHolder>() {
+class ListCompanyAdapter(val fragment: Fragment) :
+    PagingDataAdapter<DataItem, ListCompanyAdapter.MyViewHolder>(DIFF_CALLBACK) {
 
-    class ListViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        val imgLogo: ImageView = itemView.findViewById(R.id.iv_companyPhoto)
-        val tvName: TextView = itemView.findViewById(R.id.tv_company)
-        val tvSalary: TextView = itemView.findViewById(R.id.tv_salary)
-        val tvLocation: TextView = itemView.findViewById(R.id.tv_location)
-        val tvPosition: TextView = itemView.findViewById(R.id.tv_position)
-        val tvDescription: TextView = itemView.findViewById(R.id.tv_description)
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
+        val binding = ListCompanyBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        return MyViewHolder(binding, fragment)
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ListViewHolder {
-        val view: View =
-            LayoutInflater.from(parent.context).inflate(R.layout.list_company, parent, false)
-        return ListViewHolder(view)
+    override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
+        val data = getItem(position)
+        if (data != null) {
+            holder.bind(data)
+        }
     }
 
-    override fun getItemCount(): Int = listCompany.size
+    class MyViewHolder(val binding: ListCompanyBinding, val fragment: Fragment) :
+        RecyclerView.ViewHolder(binding.root) {
+        fun bind(data: DataItem) {
+            Glide.with(fragment)
+                .load(data.companyProfile)
+                .error(R.drawable.bewa) // Tetapkan gambar error
+                .into(binding.ivCompanyPhoto)
+            binding.tvCompany.text = data.companyProfile
+            binding.tvSalary.text = data.salaryRange
+            binding.tvPosition.text = data.title
+            binding.tvLocation.text = data.location
+            binding.tvDescription.text = data.description
 
-    override fun onBindViewHolder(holder: ListViewHolder, position: Int) {
-        val (name,salary, position, location, description, logo) = listCompany[position]
-        holder.imgLogo.setImageResource(logo)
-        holder.tvPosition.text = position
-        holder.tvSalary.text = salary
-        holder.tvLocation.text = location
-        holder.tvName.text = name
-        holder.tvDescription.text = description
-        holder.itemView.setOnClickListener {
-            val intentDetail = Intent(holder.itemView.context, DetailActivity::class.java)
-            intentDetail.putExtra("key_company", listCompany[holder.adapterPosition])
-            holder.itemView.context.startActivity(intentDetail)
+//            itemView.setOnClickListener {
+//                val intent = Intent(fragment.requireContext(), DetailActivity::class.java).apply {
+//                    this.putExtra("data", data)
+//                }
+//                val optionsCompat: ActivityOptionsCompat =
+//                    ActivityOptionsCompat.makeSceneTransitionAnimation(
+//                        fragment.requireActivity(),
+//                        androidx.core.util.Pair(binding.ivPhoto, "image"),
+//                        androidx.core.util.Pair(binding.tvName, "name"),
+//                        androidx.core.util.Pair(binding.tvDescription, "description")
+//                    )
+//                fragment.requireContext().startActivity(intent, optionsCompat.toBundle())
+//            }
+        }
+    }
+
+    companion object {
+        val DIFF_CALLBACK = object : DiffUtil.ItemCallback<DataItem>() {
+            override fun areItemsTheSame(oldItem: DataItem, newItem: DataItem): Boolean {
+                return oldItem == newItem
+            }
+
+            override fun areContentsTheSame(
+                oldItem: DataItem,
+                newItem: DataItem
+            ): Boolean {
+                return oldItem == newItem
+            }
         }
     }
 }

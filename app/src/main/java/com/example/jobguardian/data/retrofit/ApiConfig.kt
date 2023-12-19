@@ -21,5 +21,18 @@ class ApiConfig {
                 .build()
             return retrofit.create(ApiServices::class.java)
         }
+        fun getApiServiceDetect():ApiServices{
+            val loggingInterceptor =
+                HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY)
+            val client = OkHttpClient.Builder()
+                .addInterceptor(loggingInterceptor)
+                .build()
+            val retrofit = Retrofit.Builder()
+                .baseUrl("https://jobguardian-app-project.et.r.appspot.com/predict_job/")
+                .addConverterFactory(GsonConverterFactory.create())
+                .client(client)
+                .build()
+            return retrofit.create(ApiServices::class.java)
+        }
     }
 }

@@ -8,7 +8,7 @@ import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import com.example.jobguardian.R
 import com.example.jobguardian.databinding.ActivitySignInBinding
-import com.example.jobguardian.ui.main.MainActivity
+import com.example.jobguardian.ui.main.ui.MainActivity
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
@@ -36,15 +36,11 @@ class SignInActivity : AppCompatActivity() {
             .build()
 
         googleSignInClient = GoogleSignIn.getClient(this, gso)
-
         auth = Firebase.auth
-
         binding.btnGoogle.setOnClickListener {
             signIn()
         }
-
         supportActionBar?.hide()
-
     }
 
     private fun signIn() {
