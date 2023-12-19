@@ -36,15 +36,11 @@ class SignInActivity : AppCompatActivity() {
             .build()
 
         googleSignInClient = GoogleSignIn.getClient(this, gso)
-
         auth = Firebase.auth
-
         binding.btnGoogle.setOnClickListener {
             signIn()
         }
-
         supportActionBar?.hide()
-
     }
 
     private fun signIn() {

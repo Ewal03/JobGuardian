@@ -18,7 +18,7 @@ class DataPagingSource (
     override suspend fun load(params: LoadParams<Int>): LoadResult<Int, DataItem> {
         return try {
             val page = params.key ?: INITIAL_PAGE_INDEX
-            val responseData = apiService.getcompanyData(page, params.loadSize)
+            val responseData = apiService.getAllJobs()
 
             LoadResult.Page(
                 data = responseData.data,
