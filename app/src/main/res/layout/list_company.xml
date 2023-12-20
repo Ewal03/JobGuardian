@@ -83,7 +83,7 @@
             android:padding="8dp"
             android:paddingStart="8dp"
             android:paddingEnd="8dp"
-            android:text="Description"
+            android:text="Descriptionn"
             android:textSize="15sp"
             card_view:layout_constraintTop_toBottomOf="@+id/tv_location"
             card_view:layout_constraintStart_toEndOf="@+id/iv_companyPhoto" />
