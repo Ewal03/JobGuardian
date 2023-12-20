@@ -13,7 +13,7 @@
         android:layout_width="40dp"
         android:layout_height="41dp"
         android:layout_marginTop="16dp"
-        android:src="@drawable/baseline_person_pin_24"
+        android:src="@drawable/pp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -22,7 +22,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:text="Hello, User!"
+        android:text="Hello, Welcome!"
         android:textColor="@color/white"
         android:textSize="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -33,10 +33,10 @@
     <ImageView
         android:layout_width="30dp"
         android:layout_height="30dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="16dp"
         android:src="@drawable/baseline_notifications_24"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.914"
+        app:layout_constraintHorizontal_bias="0.915"
         app:layout_constraintStart_toEndOf="@+id/userHello"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -58,7 +58,7 @@
 
     <com.google.android.material.search.SearchBar
     android:id="@+id/searchBar"
-    android:layout_width="0dp"
+    android:layout_width="match_parent"
     android:layout_height="wrap_content"
     app:layout_constraintBottom_toBottomOf="parent"
     app:layout_constraintEnd_toEndOf="parent"
@@ -66,9 +66,20 @@
     app:layout_constraintStart_toStartOf="parent"
     android:hint="Search Company "
     app:layout_constraintTop_toBottomOf="@+id/textView4"
-    app:layout_constraintVertical_bias="0.0">
+    app:layout_constraintVertical_bias="0.0"/>
 
-    </com.google.android.material.search.SearchBar>
+
+    <com.google.android.material.search.SearchView
+        android:id="@+id/searchView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_anchor="@id/searchBar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_company"

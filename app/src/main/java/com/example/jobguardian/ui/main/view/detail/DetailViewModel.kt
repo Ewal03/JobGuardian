@@ -10,7 +10,7 @@ class DetailViewModel(application: Application) : ViewModel() {
 
     private val repository: FavoriteRepository = FavoriteRepository(application)
 
-    fun isFavorit(username: String): LiveData<Boolean> = repository.isFavorit(username)
+    fun isFavorit(title: String): LiveData<Boolean> = repository.isFavorit(title)
 
     fun insertFavorit(favoriteEntity: FavoriteEntity) {
         repository.insertFavorit(favoriteEntity)

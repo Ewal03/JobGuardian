@@ -2,6 +2,7 @@ package com.example.jobguardian.ui.main.view.detail
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.core.content.ContextCompat
 import com.bumptech.glide.Glide
@@ -25,6 +26,7 @@ class DetailActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         val dataId = intent.getParcelableExtra<DataItem>("data")
+        val dataId2 = intent.getParcelableExtra<DataItem>("data2")
 
         if (dataId != null) {
             binding.ivCompanyPhoto.apply {
@@ -40,15 +42,29 @@ class DetailActivity : AppCompatActivity() {
             binding.tvLocation.text = dataId.location
             binding.tvDescription.text = dataId.description
 
+
+        }else if (dataId2 != null){
             favoritEntity = FavoriteEntity(
-                title = dataId.title.orEmpty(),
-                companyProfile = dataId.companyProfile,
-                salaryRange = dataId.salaryRange,
-                location = dataId.location,
-                desc = dataId.description,
-                companyLogo = dataId.companyLogo
+                title = dataId2.title.orEmpty(),
+                companyProfile = dataId2.companyProfile,
+                salaryRange = dataId2.salaryRange,
+                location = dataId2.location,
+                desc = dataId2.description,
+                companyLogo = dataId2.companyLogo
             )
-        }
+            binding.ivCompanyPhoto.apply {
+                Glide.with(context)
+                    .load(dataId2.companyLogo)
+                    .error(R.drawable.temp_iv)
+                    .into(this)
+            }
+
+            binding.tvCompany.text = dataId2.companyProfile
+            binding.tvSalary.text = dataId2.salaryRange
+            binding.tvPosition.text = dataId2.title
+            binding.tvLocation.text = dataId2.location
+            binding.tvDescription.text = dataId2.description
+             }
 
         supportActionBar?.hide()
 
@@ -78,10 +94,11 @@ class DetailActivity : AppCompatActivity() {
                                 )
                             )
                         }
+
                         else -> {
                             // Hapus dari favorit
                             detailViewModel.deleteFavorit(favoritEntity)
-                            tag = ""
+                            tag = null
                             setImageDrawable(
                                 ContextCompat.getDrawable(
                                     this@DetailActivity,

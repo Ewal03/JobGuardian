@@ -60,13 +60,11 @@ class ListCompanyAdapter(val fragment: Fragment) :
             }
         }
     }
-
     companion object {
         val DIFF_CALLBACK = object : DiffUtil.ItemCallback<DataItem>() {
             override fun areItemsTheSame(oldItem: DataItem, newItem: DataItem): Boolean {
                 return oldItem == newItem
             }
-
             override fun areContentsTheSame(
                 oldItem: DataItem,
                 newItem: DataItem

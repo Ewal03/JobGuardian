@@ -31,7 +31,7 @@ class FavoritAdapter(private val onItemClick: (FavoriteEntity) -> Unit) :
     class MyViewHolder(val binding: ListCompanyBinding) : RecyclerView.ViewHolder(binding.root) {
         fun bind(data: FavoriteEntity) {
             Glide.with(itemView.context)
-                .load(data.companyProfile)
+                .load(data.companyLogo)
                 .error(R.drawable.temp_iv)
                 .into(binding.ivCompanyPhoto)
             binding.tvCompany.text = data.companyProfile
@@ -42,7 +42,7 @@ class FavoritAdapter(private val onItemClick: (FavoriteEntity) -> Unit) :
 
             itemView.setOnClickListener {
                 val intent = Intent(itemView.context, DetailActivity::class.java).apply {
-                    this.putExtra("data", data.title)
+                    this.putExtra("data2", data.title)
                 }
                 val optionsCompat: ActivityOptionsCompat =
                     ActivityOptionsCompat.makeSceneTransitionAnimation(

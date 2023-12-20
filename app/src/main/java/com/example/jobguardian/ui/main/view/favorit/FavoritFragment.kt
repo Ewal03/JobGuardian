@@ -33,9 +33,9 @@ class FavoritFragment : Fragment() {
             ViewModelProvider(this, favoritViewModelFactory)[FavoritViewModel::class.java]
 
         val recyclerView = binding.rvFavUser
-        favoritAdapter = FavoritAdapter { favorit ->
-            val intent = Intent(requireContext(), DetailActivity::class.java)
-            intent.putExtra("data", favorit.title)
+        favoritAdapter = FavoritAdapter { data ->
+            val intent = Intent(requireActivity(), DetailActivity::class.java)
+            intent.putExtra("data", data.title)
             startActivity(intent)
         }
 
