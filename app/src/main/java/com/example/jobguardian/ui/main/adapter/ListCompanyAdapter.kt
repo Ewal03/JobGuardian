@@ -49,6 +49,7 @@ class ListCompanyAdapter(val fragment: Fragment) :
                 val optionsCompat: ActivityOptionsCompat =
                     ActivityOptionsCompat.makeSceneTransitionAnimation(
                         fragment.requireActivity(),
+                        androidx.core.util.Pair(binding.ivCompanyPhoto, "companyLogo"),
                         androidx.core.util.Pair(binding.tvCompany, "companyProfile"),
                         androidx.core.util.Pair(binding.tvSalary, "salaryRange"),
                         androidx.core.util.Pair(binding.tvPosition, "title"),

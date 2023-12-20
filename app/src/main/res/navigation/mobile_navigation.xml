@@ -24,12 +24,6 @@
         tools:layout="@layout/fragment_profile" />
 
     <fragment
-        android:id="@+id/navigation_notifications"
-        android:name="com.example.jobguardian.ui.main.view.notifications.NotificationFragment"
-        android:label="@string/title_notifications"
-        tools:layout="@layout/fragment_notification"/>
-
-    <fragment
         android:id="@+id/navigation_favorit"
         android:name="com.example.jobguardian.ui.main.view.favorit.FavoritFragment"
         android:label="@string/title_favorit"

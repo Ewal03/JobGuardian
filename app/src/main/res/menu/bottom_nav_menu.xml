@@ -20,12 +20,6 @@
         android:background="@drawable/selector_menu"/>
 
     <item
-        android:id="@+id/navigation_notifications"
-        android:icon="@drawable/baseline_notifications_active_24"
-        android:title="@string/title_notification"
-        android:background="@drawable/selector_menu"/>
-
-    <item
         android:id="@+id/navigation_profile"
         android:icon="@drawable/ic_baseline_person_23"
         android:title="@string/title_profile"

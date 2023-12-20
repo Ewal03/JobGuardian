@@ -1,5 +1,6 @@
 package com.example.jobguardian.ui.main.adapter
 
+
 import android.app.Activity
 import android.content.Intent
 import android.view.LayoutInflater
@@ -46,6 +47,7 @@ class FavoritAdapter(private val onItemClick: (FavoriteEntity) -> Unit) :
                 val optionsCompat: ActivityOptionsCompat =
                     ActivityOptionsCompat.makeSceneTransitionAnimation(
                         itemView.context as Activity,
+                        androidx.core.util.Pair(binding.ivCompanyPhoto, "companyLogo"),
                         androidx.core.util.Pair(binding.tvCompany, "companyProfile"),
                         androidx.core.util.Pair(binding.tvSalary, "salaryRange"),
                         androidx.core.util.Pair(binding.tvPosition, "title"),

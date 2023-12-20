@@ -15,12 +15,12 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:src="@drawable/mugi" />
+        android:src="@drawable/pp" />
 
     <EditText
         android:id="@+id/editTextName"
         android:layout_width="match_parent"
-        android:layout_height="38dp"
+        android:layout_height="40dp"
         android:layout_marginTop="16dp"
         android:backgroundTint="#FFFF"
         android:hint="Name"
@@ -35,7 +35,7 @@
     <EditText
         android:id="@+id/editTextBirthday"
         android:layout_width="match_parent"
-        android:layout_height="38dp"
+        android:layout_height="40dp"
         android:layout_marginTop="16dp"
         android:textColorHint="@android:color/white"
         android:textColor="@android:color/white"
@@ -49,7 +49,7 @@
     <EditText
         android:id="@+id/editTextContactPerson"
         android:layout_width="match_parent"
-        android:layout_height="47dp"
+        android:layout_height="40dp"
         android:layout_marginTop="8dp"
         android:textColor="@android:color/white"
         android:backgroundTint="#FFFF"

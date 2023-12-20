@@ -13,6 +13,7 @@ import com.example.jobguardian.factory.FavoritViewModelFactory
 import com.example.jobguardian.ui.main.adapter.FavoritAdapter
 import com.example.jobguardian.ui.main.view.detail.DetailActivity
 
+
 class FavoritFragment : Fragment() {
 
     private var _binding: FragmentFavoritBinding? = null

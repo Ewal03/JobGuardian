@@ -81,7 +81,7 @@ class DetailActivity : AppCompatActivity() {
                         else -> {
                             // Hapus dari favorit
                             detailViewModel.deleteFavorit(favoritEntity)
-                            tag = null
+                            tag = ""
                             setImageDrawable(
                                 ContextCompat.getDrawable(
                                     this@DetailActivity,

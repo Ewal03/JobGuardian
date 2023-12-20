@@ -23,6 +23,7 @@ class SignInActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivitySignInBinding
     private lateinit var googleSignInClient: GoogleSignInClient
+
     private lateinit var auth: FirebaseAuth
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -39,6 +40,9 @@ class SignInActivity : AppCompatActivity() {
         auth = Firebase.auth
         binding.btnGoogle.setOnClickListener {
             signIn()
+        }
+        binding.button.setOnClickListener {
+
         }
         supportActionBar?.hide()
     }
