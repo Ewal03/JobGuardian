@@ -1,4 +1,4 @@
-package com.example.jobguardian.ui.main.ui
+package com.example.jobguardian.ui.main.view
 
 import android.os.Bundle
 import com.google.android.material.bottomnavigation.BottomNavigationView
@@ -28,7 +28,7 @@ class MainActivity : AppCompatActivity() {
         val navController = findNavController(R.id.nav_host_fragment_activity_bottom_navigation)
         val appBarConfiguration = AppBarConfiguration(
             setOf(
-                R.id.navigation_home, R.id.navigation_detection, R.id.navigation_profile
+                R.id.navigation_home, R.id.navigation_detection, R.id.navigation_profile,  R.id.navigation_notifications, R.id.navigation_notifications
             )
         )
         setupActionBarWithNavController(navController, appBarConfiguration)

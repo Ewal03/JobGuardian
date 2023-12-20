@@ -1,6 +1,8 @@
 package com.example.jobguardian.data.response
 
+import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
+import kotlinx.parcelize.Parcelize
 
 data class ListJobResponse(
 
@@ -10,7 +12,7 @@ data class ListJobResponse(
 	@field:SerializedName("status")
 	val status: String
 )
-
+@Parcelize
 data class DataItem(
 
 	@field:SerializedName("salaryRange")
@@ -27,6 +29,9 @@ data class DataItem(
 
 	@field:SerializedName("employmentType")
 	val employmentType: String,
+
+	@field:SerializedName("companyLogo")
+	val companyLogo: String,
 
 	@field:SerializedName("description")
 	val description: String,
@@ -60,4 +65,4 @@ data class DataItem(
 
 	@field:SerializedName("status")
 	val status: String
-)
+):Parcelable

@@ -1,4 +1,4 @@
-package com.example.jobguardian.ui.main.ui.notifications
+package com.example.jobguardian.ui.main.view.notifications
 
 import androidx.lifecycle.ViewModel
 

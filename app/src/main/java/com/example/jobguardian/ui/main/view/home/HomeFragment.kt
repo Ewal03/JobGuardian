@@ -1,4 +1,4 @@
-package com.example.jobguardian.ui.main.ui.home
+package com.example.jobguardian.ui.main.view.home
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -9,7 +9,7 @@ import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.jobguardian.databinding.FragmentHomeBinding
-import com.example.jobguardian.ui.main.ViewModelFactory
+import com.example.jobguardian.factory.ViewModelFactory
 import com.example.jobguardian.ui.main.adapter.ListCompanyAdapter
 import com.example.jobguardian.ui.main.adapter.LoadingStateAdapter
 
@@ -35,6 +35,9 @@ class HomeFragment : Fragment() {
         val itemDecoration = DividerItemDecoration(requireContext(), layoutManager.orientation)
         binding.rvCompany.addItemDecoration(itemDecoration)
 
+        homeViewModel.isLoading.observe(requireActivity()) {
+            loading(it)}
+
         val adapter = ListCompanyAdapter(this)
         binding.rvCompany.adapter = adapter.withLoadStateFooter(
             footer = LoadingStateAdapter {
@@ -52,4 +55,7 @@ class HomeFragment : Fragment() {
         super.onDestroyView()
         _binding = null
     }
+        private fun loading(isLoading: Boolean) {
+            binding.loading.visibility = if (isLoading) View.VISIBLE else View.GONE
+        }
 }

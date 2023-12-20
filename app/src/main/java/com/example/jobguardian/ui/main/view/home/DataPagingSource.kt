@@ -1,11 +1,9 @@
-package com.example.jobguardian.ui.main
+package com.example.jobguardian.ui.main.view.home
 
 import androidx.paging.PagingSource
 import androidx.paging.PagingState
-import com.example.jobguardian.data.pref.UserPreference
 import com.example.jobguardian.data.response.DataItem
 import com.example.jobguardian.data.retrofit.ApiServices
-import kotlinx.coroutines.flow.first
 
 class DataPagingSource (
     private val apiService: ApiServices,

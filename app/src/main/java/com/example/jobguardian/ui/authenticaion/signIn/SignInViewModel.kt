@@ -3,10 +3,10 @@ package com.example.jobguardian.ui.authenticaion.signIn
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.jobguardian.data.pref.UserModel
-import com.example.jobguardian.repository.UserRepository
+import com.example.jobguardian.data.repository.Repository
 import kotlinx.coroutines.launch
 
-class SignInViewModel(private val repository: UserRepository) : ViewModel() {
+class SignInViewModel(private val repository: Repository) : ViewModel() {
     fun saveSession(user: UserModel) {
         viewModelScope.launch {
             repository.saveSession(user)

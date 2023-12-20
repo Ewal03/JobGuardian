@@ -1,4 +1,4 @@
-package com.example.jobguardian.ui.main.ui.detection
+package com.example.jobguardian.ui.main.view.detection
 
 import android.util.Log
 import androidx.lifecycle.LiveData
@@ -6,7 +6,6 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.jobguardian.data.response.DescriptionResponse
 import com.example.jobguardian.data.retrofit.ApiConfig
-import com.google.android.play.integrity.internal.e
 import com.google.gson.Gson
 import retrofit2.Call
 import retrofit2.Callback

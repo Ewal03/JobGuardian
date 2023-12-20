@@ -1,4 +1,4 @@
-package com.example.jobguardian.ui.main.ui.profile
+package com.example.jobguardian.ui.main.view.profile
 
 import android.content.Intent
 import android.os.Bundle

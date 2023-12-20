@@ -1,4 +1,4 @@
-package com.example.jobguardian.ui.main.ui.notifications
+package com.example.jobguardian.ui.main.view.notifications
 
 import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
@@ -6,10 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.example.jobguardian.R
-import com.example.jobguardian.databinding.FragmentHomeBinding
 import com.example.jobguardian.databinding.FragmentNotificationBinding
-import com.example.jobguardian.ui.main.ui.home.HomeViewModel
 
 class NotificationFragment : Fragment() {
 

@@ -11,8 +11,6 @@ import androidx.appcompat.widget.AppCompatEditText
 
 class CustomEditText : AppCompatEditText {
 
-    private lateinit var clearButtonImage: Drawable
-
     constructor(context: Context) : super(context) {
         init()
     }

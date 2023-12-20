@@ -1,4 +1,4 @@
-package com.example.jobguardian.data.repository
+package com.example.jobguardian.data.utils
 
 sealed class Result<out T : Any> {
     data class Success<out T : Any>(val data: T) : Result<T>()

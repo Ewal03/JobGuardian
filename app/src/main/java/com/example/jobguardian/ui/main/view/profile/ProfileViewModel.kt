@@ -1,4 +1,4 @@
-package com.example.jobguardian.ui.main.ui.profile
+package com.example.jobguardian.ui.main.view.profile
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
