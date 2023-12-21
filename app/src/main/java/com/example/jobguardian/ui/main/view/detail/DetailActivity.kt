@@ -26,7 +26,7 @@ class DetailActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         val dataId = intent.getParcelableExtra<DataItem>("data")
-        val dataId2 = intent.getParcelableExtra<DataItem>("data2")
+        val dataId2 = intent.getParcelableExtra<FavoriteEntity>("data2")
 
         if (dataId != null) {
             binding.ivCompanyPhoto.apply {
@@ -49,7 +49,7 @@ class DetailActivity : AppCompatActivity() {
                 companyProfile = dataId2.companyProfile,
                 salaryRange = dataId2.salaryRange,
                 location = dataId2.location,
-                desc = dataId2.description,
+                desc = dataId2.desc,
                 companyLogo = dataId2.companyLogo
             )
             binding.ivCompanyPhoto.apply {
@@ -63,7 +63,7 @@ class DetailActivity : AppCompatActivity() {
             binding.tvSalary.text = dataId2.salaryRange
             binding.tvPosition.text = dataId2.title
             binding.tvLocation.text = dataId2.location
-            binding.tvDescription.text = dataId2.description
+            binding.tvDescription.text = dataId2.desc
              }
 
         supportActionBar?.hide()

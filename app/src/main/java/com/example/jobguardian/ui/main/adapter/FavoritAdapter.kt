@@ -42,7 +42,7 @@ class FavoritAdapter(private val onItemClick: (FavoriteEntity) -> Unit) :
 
             itemView.setOnClickListener {
                 val intent = Intent(itemView.context, DetailActivity::class.java).apply {
-                    this.putExtra("data2", data.title)
+                    this.putExtra("data2", data)
                 }
                 val optionsCompat: ActivityOptionsCompat =
                     ActivityOptionsCompat.makeSceneTransitionAnimation(

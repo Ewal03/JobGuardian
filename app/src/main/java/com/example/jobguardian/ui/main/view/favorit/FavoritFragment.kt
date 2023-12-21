@@ -35,7 +35,7 @@ class FavoritFragment : Fragment() {
         val recyclerView = binding.rvFavUser
         favoritAdapter = FavoritAdapter { data ->
             val intent = Intent(requireActivity(), DetailActivity::class.java)
-            intent.putExtra("data", data.title)
+            intent.putExtra("data2", data.title)
             startActivity(intent)
         }
 
