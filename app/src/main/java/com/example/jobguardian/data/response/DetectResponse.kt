@@ -4,9 +4,15 @@ import com.google.gson.annotations.SerializedName
 
 data class DetectResponse(
 
-	@field:SerializedName("update_status")
-	val updateStatus: String? = null,
+	@field:SerializedName("msg")
+	val msg: String? = null,
 
-	@field:SerializedName("prediction")
-	val prediction: String? = null
+	@field:SerializedName("descriptionId")
+	val descriptionId: String? = null,
+
+	@field:SerializedName("Predicted Job")
+	val predictedJob: String? = null,
+
+	@field:SerializedName("status")
+	val status: String? = null
 )

@@ -39,23 +39,21 @@ class DetectionFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
         val cbLogo: CheckBox = view.findViewById(R.id.cb_logo)
         val cbTelecommuting: CheckBox = view.findViewById(R.id.cb_telecommuting)
         val etDeskripsi: EditText = view.findViewById(R.id.et_deskripsi)
         val btnSendDetect: Button = view.findViewById(R.id.btn_send_detect)
-
-        val isLogoChecked = cbLogo.isChecked
-        val isTelecommutingChecked = cbTelecommuting.isChecked
-
         btnSendDetect.setOnClickListener {
+            val isLogoChecked = cbLogo.isChecked
+            val isTelecommutingChecked = cbTelecommuting.isChecked
             val jobDescription = etDeskripsi.text.toString()
 
             val detectionViewModel = ViewModelProvider(this).get(DetectionViewModel::class.java)
             detectionViewModel.sendDataToApi(
-                isLogoChecked.toString(),
-                isTelecommutingChecked.toString(),
-                jobDescription
+                isLogoChecked,
+                isTelecommutingChecked,
+                jobDescription,
+                requireContext()
             )
         }
     }
