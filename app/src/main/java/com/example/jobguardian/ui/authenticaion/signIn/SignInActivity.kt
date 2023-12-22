@@ -8,9 +8,14 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
+import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.ViewModelProvider
 import com.example.jobguardian.R
+import com.example.jobguardian.data.pref.UserModel
 import com.example.jobguardian.databinding.ActivitySignInBinding
+import com.example.jobguardian.factory.ViewModelFactory
+import com.example.jobguardian.ui.main.SharedViewModel
 import com.example.jobguardian.ui.main.view.MainActivity
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
@@ -23,19 +28,23 @@ import com.google.firebase.auth.GoogleAuthProvider
 import com.google.firebase.auth.auth
 
 class SignInActivity : AppCompatActivity() {
-
+    private lateinit var sharedViewModel: SharedViewModel
     private lateinit var binding: ActivitySignInBinding
     private lateinit var googleSignInClient: GoogleSignInClient
 
     private lateinit var emailEditText: EditText
     private lateinit var passwordEditText: EditText
     private lateinit var btnSignIn: Button
-
+    private val viewModel by viewModels<SignInViewModel> {
+        ViewModelFactory.getInstance(this)
+    }
     private lateinit var auth: FirebaseAuth
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivitySignInBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        sharedViewModel = ViewModelProvider(this).get(SharedViewModel::class.java)
+
 
         emailEditText = findViewById(R.id.emailEditText)
         passwordEditText = findViewById(R.id.passwordEditText)
@@ -70,7 +79,8 @@ class SignInActivity : AppCompatActivity() {
 
         auth.signInWithEmailAndPassword(email,password)
             .addOnSuccessListener {
-                startActivity(Intent(this, MainActivity::class.java))
+                val user = auth.currentUser
+                updateUI(user)
             }
             .addOnFailureListener {error ->
                 Toast.makeText(this, error.localizedMessage , Toast.LENGTH_SHORT).show()
@@ -112,14 +122,21 @@ class SignInActivity : AppCompatActivity() {
     }
 
     private fun updateUI(currentUser: FirebaseUser?) {
-        if (currentUser != null){
+        if (currentUser != null) {
+            val email=currentUser.email.toString()
+            val userId = currentUser.uid
+            Toast.makeText(this, email , Toast.LENGTH_SHORT).show()
             Log.d(TAG, "User is signed in: ${currentUser.displayName}")
-            startActivity(Intent(this@SignInActivity, MainActivity::class.java))
+            viewModel.saveSession(
+                UserModel(email, currentUser.uid, true)
+            )
+            startActivity(Intent(this@SignInActivity, MainActivity::class.java).apply {
+                putExtra("userId", userId)
+            })
             finish()
-
-
         }
     }
+
 
     override fun onStart() {
         super.onStart()

@@ -34,7 +34,7 @@ class ListCompanyAdapter(val fragment: Fragment) :
         fun bind(data: DataItem) {
             Glide.with(fragment)
                 .load(data.companyLogo)
-                .error(R.drawable.temp_iv) // Tetapkan gambar error
+                .error(R.drawable.temp_iv)
                 .into(binding.ivCompanyPhoto)
             binding.tvCompany.text = data.companyProfile
             binding.tvSalary.text = data.salaryRange

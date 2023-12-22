@@ -25,22 +25,21 @@
             android:padding="8dp"
             android:scaleType="fitCenter"
             android:src="@drawable/temp_iv"
+            card_view:layout_constraintBottom_toBottomOf="parent"
             card_view:layout_constraintStart_toStartOf="parent"
-            card_view:layout_constraintTop_toTopOf="parent"
-            card_view:layout_constraintBottom_toBottomOf="parent" />
+            card_view:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/tv_company"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
             android:paddingStart="8dp"
             android:paddingEnd="8dp"
             android:text="Company"
             android:textSize="20dp"
             android:textStyle="bold"
-            card_view:layout_constraintTop_toTopOf="@+id/iv_companyPhoto"
-            card_view:layout_constraintStart_toEndOf="@+id/iv_companyPhoto" />
+            card_view:layout_constraintStart_toEndOf="@+id/iv_companyPhoto"
+            card_view:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/tv_salary"

@@ -59,6 +59,8 @@ dependencies {
     implementation("androidx.core:core-ktx:1.12.0")
     implementation("androidx.paging:paging-runtime-ktx:3.1.0")
     implementation("androidx.paging:paging-common-android:3.3.0-alpha02")
+    implementation("androidx.room:room-common:2.6.1")
+    implementation("com.google.firebase:firebase-firestore:24.10.0")
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")

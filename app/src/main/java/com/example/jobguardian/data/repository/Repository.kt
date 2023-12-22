@@ -16,7 +16,13 @@ class Repository(
     private val userPreference: UserPreference,
     private val apiService: ApiServices
 ) {
+    suspend fun saveSession(user: UserModel) {
+        userPreference.saveSession(user)
+    }
 
+    fun getSession(): Flow<UserModel> {
+        return userPreference.getSession()
+    }
 
     fun getData(): LiveData<PagingData<DataItem>> {
         return Pager(
